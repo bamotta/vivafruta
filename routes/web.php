@@ -6,6 +6,10 @@ use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
+Route::get('/test-viva', function () {
+    return "El servidor funciona correctamente";
+});
+
 // --- 1. RUTAS PÚBLICAS (Cualquiera las ve) ---
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
