@@ -94,5 +94,5 @@
         "ignore-platform-reqs": true
     },
     "minimum-stability": "stable",
-    "prefer-stable": true,
+    "prefer-stable": true
 }
