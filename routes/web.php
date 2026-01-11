@@ -6,20 +6,6 @@ use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/test-viva', function () {
-    return "El servidor funciona correctamente";
-});
-
-Route::get('/arreglar-todo', function () {
-    try {
-        \Illuminate\Support\Facades\Artisan::call('migrate:fresh', ['--force' => true]);
-        \Illuminate\Support\Facades\Artisan::call('db:seed', ['--force' => true]);
-        return "¡Web lista! Las tablas se han creado. Ve a la página de inicio.";
-    } catch (\Exception $e) {
-        return "Error al configurar: " . $e->getMessage();
-    }
-});
-
 // --- 1. RUTAS PÚBLICAS (Cualquiera las ve) ---
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
